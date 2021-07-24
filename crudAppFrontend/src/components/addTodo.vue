@@ -68,33 +68,6 @@ export default {
                 this.$emit('updateTodoRecord', updatedTodo)
                 this.update = {}
             }
-
-
-
-
-
-
-
-
-
-
-
-
-            // if (this.update) {
-            //    this.errorMsg= "Please Enter a Todo"
-            //     this.$emit('emitError', this.errorMsg)
-            // } else if (!isNaN(this.update.title)) {
-            //     this.errorMsg= "Your Todo cannot be a number"
-            //     this.$emit('emitError', this.errorMsg)
-            // }  else {
-            //      const newTodo = {
-            //         title: this.update.title,
-            //         completed: false
-            //     }
-            //     // SEND TO PARENT COMPONENT
-            //     this.$emit('updateTodoRecord', update)
-            //     this.update = {}
-            // }
         }
     }
 }

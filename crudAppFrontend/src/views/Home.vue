@@ -25,8 +25,8 @@ export default {
       todos: [],
       errorStatus: false,
       error: '',
-      // baseUrl: "https://e-todo-api.herokuapp.com/todo",
-      baseUrl: "http://localhost:3000"
+      baseUrl: 'http://crudtodoappp.herokuapp.com/api',
+      // baseUrl: "http://localhost:3000/api"
     }
   },
   methods: {

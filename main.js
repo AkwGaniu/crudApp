@@ -12,9 +12,15 @@ if (cluster.isMaster) {
     const mongoose = require('mongoose')
     const create_error = require('http-errors')
     const dotenv = require('dotenv')
+    const path = require('path')
 
     const todos = require('./router/todoRoutes')
     const app = express()
+
+    //Set up the static files
+    app.use(express.static("./assets"))
+    app.use(express.static(path.join(__dirname, '/crudAppFrontend/mainApp')))
+
 
     // BODY PARSER
     app.use(express.json())
@@ -41,7 +47,10 @@ if (cluster.isMaster) {
     })
 
     //CREATE ROUTER MIDDLEWARE
-    app.use('/', todos)
+    app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, '/crudAppFrontend/mainApp/index.html'));
+    });
+    app.use('/api', todos)
 
     // HANDLE 404 REQUEST
     app.use((req, resp, next) => {
