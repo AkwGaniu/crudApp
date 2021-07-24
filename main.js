@@ -4,7 +4,6 @@ const cluster = require('cluster')
 if (cluster.isMaster) {
     const num_of_cpu = os.cpus().length
     console.log(`Server forking ${num_of_cpu} CPUS`)
-
     for (let i = 0; i < num_of_cpu; i++) {
         cluster.fork()
     }
